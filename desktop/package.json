@@ -1,0 +1,37 @@
+{
+  "name": "sipplate-desktop",
+  "version": "0.1.0",
+  "description": "sipplate breakfast journal — desktop app",
+  "main": "electron.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "NODE_ENV=development electron .",
+    "build": "electron-builder"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^29.0.0",
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "com.sipplate.app",
+    "productName": "sipplate",
+    "directories": {
+      "output": "../dist-electron"
+    },
+    "files": [
+      "electron.js",
+      "../frontend/dist/**/*",
+      "../backend/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.lifestyle"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  }
+}
